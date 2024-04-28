@@ -18,10 +18,10 @@
                 <img src = "Images/niser_logo.png" class="logo">
                 <ul id="sidemenu">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Core Committee Members</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#committee">Core Committee Members</a></li>
+                    <li><a href="#event">Events</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="header-text">
@@ -47,11 +47,133 @@
     </div>
 </div>
 
+<!--__________________________Core Committee Memebers___________________________________-->
+<div id="committee">
+    <div class="container">
+        <h1 class="sub-title">Core Committee</h1>
+        <div class="members">
+            <div class="President">
+                <h2>President</h2>
+                <p>Dipendu Bar</p>
+            </div>
 
+            <div class="Convener">
+                <h2>Convener</h2>
+                <p>Aman Gupta</p>
+            </div>
+
+            <div class="Outreach">
+                <h2>Outreach</h2>
+                <p>Arka Ghosh</p>
+            </div>
+
+            <div class="Treasurer">
+                <h2>Treasurer</h2>
+                <p>Roshan Matthew<br> Philip</p>
+            </div>
+
+            <div class="FIC">
+                <h2>Faculty In Charge</h2>
+                <p>Dr.Amaresh Jaiswal</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
     
 
+<!--__________________________________Events_______________________________________________-->
 
+<div id="event">
+    <div class="container">
+        <h1 class="sub-title">Events</h1>
+        <div class="event-list">
+            <div class="event-info">
+                <div class="layer">
+                    <h3>Meme Making</h3>
+                    <img src="Images/meme_competition.jpg">
+                    <div class="motion">
+                        <p>Online making of memes based on physics</p>
+                    </div>
+                </div>                
+            </div>
+            
+            <div class="event-info">
+                <div class="layer">
+                <h3>Vikiran Weekly talk</h3>
+                <img src="Images/talks.jpg">
+                    <div class="motion">
+                    <p>Student talks on various physics topics</p>
+                    </div>
+                </div>                
+            </div>
+            <div class="event-info">
+                <div class="layer">
+                <h3>Prerna</h3>
+                <img src="Images/exhibition.jpg">
+                    <div class="motion">
+                    <p>Demonstrations for children of the NISER staff on non Newtonian fluid and electron beam on collaboration with Zaariya</p>
+                    </div>
+                </div>                
+            </div>
+            <div class="event-info">
+                <div class="layer">
+                <h3>Scientia</h3>
+                <img src="Images/quiz.jpg">
+                    <div class="motion">
+                    <p>Quiz competition with 3 rounds</p>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <a href="#" class="btn">See More</a>
+    </div>
+</div>
 
+<!--_________________________CONTACT US________________________________-->
 
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">                
+                <h1 class="sub-title">Contact Us<br></h1>
+                <p><i class="fa-solid fa-envelope"></i>vikiran@niser.ac.in</p>
+
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/vikiran_niser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@vikiranniser"><i class="fa-brands fa-youtube"></i></a>
+                </div>               
+            </div>
+
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright © VIKIRAN</p>
+    </div>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxyeen4IAGfMZ_FiXy3uJKTWXouRqp1bZVO6R2p4DodeJog6btlsun0C4JBzZSSsK42/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {form.reset()})
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
 
 </body>
+</html>
